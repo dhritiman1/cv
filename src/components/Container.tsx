@@ -7,8 +7,6 @@ import { ArrProperty, CVData, Property } from "../util/type";
 const Container = () => {
   const [cv, setCv] = useState<CVData>(initCV);
 
-  console.log(cv["projects"]);
-
   const handlePropertyChange = (e: any, property: Property) => {
     const { name, value } = e.target;
 
@@ -23,10 +21,11 @@ const Container = () => {
 
   const handleArrayPropertyChange = (
     e: any,
-    id: string,
-    property: ArrProperty
+    property: ArrProperty,
+    id: string
   ) => {
     const { name, value } = e.target;
+    console.log(id, property);
     setCv((prevState) => {
       const items: any = prevState[property].map((item) => {
         if (item.id === id) {
