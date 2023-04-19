@@ -1,21 +1,63 @@
+import { ArrProperty, Projects as P } from "../../util/type";
 import Input from "../ui/Input";
 import Section from "../ui/Section";
 import TextArea from "../ui/TextArea";
 
-const Projects = () => {
+type Props = {
+  projects: P[];
+  onArrayPropertyChange(e: any, id: string, property: ArrProperty): void;
+};
+
+const Projects = ({ projects, onArrayPropertyChange }: Props) => {
   return (
     <Section heading="Projects">
-      <NthProject />{" "}
+      {projects.map((project) => {
+        return (
+          <NthProject
+            key={project.id}
+            project={project}
+            onChange={onArrayPropertyChange}
+            id={project.id}
+          />
+        );
+      })}
     </Section>
   );
 };
 
-const NthProject = () => {
+type NthProp = {
+  project: P;
+  id: string;
+  onChange(e: any, property: ArrProperty, id: string): void;
+};
+
+const NthProject = ({ project, id, onChange }: NthProp) => {
   return (
     <div className="flex flex-col">
-      <Input labelText="Title" />
-      <Input labelText="Github Link" />
-      <TextArea labelText="Description" />
+      <Input
+        labelText="Title"
+        name="title"
+        value={project.title}
+        property="projects"
+        id={id}
+        onChange={onChange}
+      />
+      <Input
+        labelText="Github Link"
+        name="github"
+        value={project.link}
+        property="projects"
+        id={id}
+        onChange={onChange}
+      />
+      <TextArea
+        labelText="Description"
+        name="desc"
+        value={project.desc}
+        property="projects"
+        id={id}
+        onChange={onChange}
+      />
     </div>
   );
 };

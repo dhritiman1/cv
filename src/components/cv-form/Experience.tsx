@@ -1,22 +1,87 @@
+import { ArrProperty, Experience as E } from "../../util/type";
 import Input from "../ui/Input";
 import Section from "../ui/Section";
+import TextArea from "../ui/TextArea";
 
-const Experience = () => {
+type Props = {
+  experiences: E[];
+  onArrayPropertyChange(e: any, property: ArrProperty, id: string): void;
+};
+
+const Experience = ({ experiences, onArrayPropertyChange }: Props) => {
   return (
     <Section heading="Experience">
-      <NthExperience />
+      {experiences.map((experience) => {
+        return (
+          <NthExperience
+            key={experience.id}
+            experience={experience}
+            id={experience.id}
+            onChange={onArrayPropertyChange}
+          />
+        );
+      })}
     </Section>
   );
 };
 
-const NthExperience = () => {
+type NthProps = {
+  experience: E;
+  id: string;
+  onChange(e: any, property: ArrProperty, id: string): void;
+};
+
+const NthExperience = ({ experience, id, onChange }: NthProps) => {
   return (
     <div className="flex flex-col">
-      <Input labelText="Company" />
-      <Input labelText="Location" />
-      <Input labelText="Position" />
-      <Input labelText="To" />
-      <Input labelText="From" />
+      <Input
+        labelText="Company"
+        name="company"
+        value={experience.company}
+        property="experiences"
+        onChange={onChange}
+        id={id}
+      />
+      <Input
+        labelText="Location"
+        name="location"
+        value={experience.city}
+        property="experiences"
+        onChange={onChange}
+        id={id}
+      />
+      <Input
+        labelText="Position"
+        name="position"
+        value={experience.position}
+        property="experiences"
+        onChange={onChange}
+        id={id}
+      />
+      <Input
+        labelText="To"
+        name="to"
+        value={experience.to}
+        property="experiences"
+        onChange={onChange}
+        id={id}
+      />
+      <Input
+        labelText="From"
+        name="from"
+        value={experience.from}
+        property="experiences"
+        onChange={onChange}
+        id={id}
+      />
+      <TextArea
+        labelText="Achievement"
+        name="achievement"
+        value={experience.achievements}
+        property="experiences"
+        onChange={onChange}
+        id={experience.id}
+      />
     </div>
   );
 };

@@ -1,11 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
+import { CVData } from "./type";
 
-const initCV = {
+const initCV: CVData = {
   personal: {
     name: "",
     email: "",
   },
-  experience: [
+  experiences: [
     {
       id: uuidv4(),
       company: "",
@@ -13,7 +14,7 @@ const initCV = {
       position: "",
       to: "",
       from: "",
-      achievements: [],
+      achievements: "",
     },
   ],
   projects: [
@@ -25,7 +26,6 @@ const initCV = {
     },
   ],
   education: {
-    id: uuidv4(),
     degree: "",
     gpa: "",
     university: "",
@@ -33,7 +33,7 @@ const initCV = {
     from: "",
   },
 
-  techStack: [],
+  techStack: "",
 };
 
 export default initCV;
