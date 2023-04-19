@@ -44,7 +44,7 @@ const NthExperience = ({ experience, id, onChange }: NthProps) => {
       />
       <Input
         labelText="Location"
-        name="location"
+        name="city"
         value={experience.city}
         property="experiences"
         onChange={onChange}
@@ -76,7 +76,7 @@ const NthExperience = ({ experience, id, onChange }: NthProps) => {
       />
       <TextArea
         labelText="Achievement"
-        name="achievement"
+        name="achievements"
         value={experience.achievements}
         property="experiences"
         onChange={onChange}
