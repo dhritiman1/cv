@@ -43,7 +43,7 @@ const NthProject = ({ project, id, onChange }: NthProp) => {
         onChange={onChange}
       />
       <Input
-        labelText="Github Link"
+        labelText="Github_Link"
         name="link"
         value={project.link}
         property="projects"

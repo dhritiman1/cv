@@ -34,6 +34,26 @@ type NthProps = {
 const NthExperience = ({ experience, id, onChange }: NthProps) => {
   return (
     <div className="flex flex-col">
+      <div className="flex justify-between">
+        <Input
+          labelText="To"
+          name="to"
+          value={experience.to}
+          width="w-[14rem]"
+          property="experiences"
+          onChange={onChange}
+          id={id}
+        />
+        <Input
+          labelText="From"
+          name="from"
+          value={experience.from}
+          width="w-[14rem]"
+          property="experiences"
+          onChange={onChange}
+          id={id}
+        />
+      </div>
       <Input
         labelText="Company"
         name="company"
@@ -58,22 +78,7 @@ const NthExperience = ({ experience, id, onChange }: NthProps) => {
         onChange={onChange}
         id={id}
       />
-      <Input
-        labelText="To"
-        name="to"
-        value={experience.to}
-        property="experiences"
-        onChange={onChange}
-        id={id}
-      />
-      <Input
-        labelText="From"
-        name="from"
-        value={experience.from}
-        property="experiences"
-        onChange={onChange}
-        id={id}
-      />
+
       <TextArea
         labelText="Achievement"
         name="achievements"

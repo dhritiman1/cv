@@ -10,6 +10,24 @@ type Props = {
 const Education = ({ education, onPropertyChange }: Props) => {
   return (
     <Section heading="Education">
+      <div className="flex justify-between">
+        <Input
+          labelText="To"
+          name="to"
+          value={education.to}
+          width="w-[14rem]"
+          property="education"
+          onChange={onPropertyChange}
+        />
+        <Input
+          labelText="From"
+          name="from"
+          value={education.from}
+          width="w-[14rem]"
+          property="education"
+          onChange={onPropertyChange}
+        />
+      </div>
       <Input
         labelText="Degree"
         name="degree"
@@ -28,20 +46,6 @@ const Education = ({ education, onPropertyChange }: Props) => {
         labelText="University"
         name="university"
         value={education.university}
-        property="education"
-        onChange={onPropertyChange}
-      />
-      <Input
-        labelText="To"
-        name="to"
-        value={education.to}
-        property="education"
-        onChange={onPropertyChange}
-      />
-      <Input
-        labelText="From"
-        name="from"
-        value={education.from}
         property="education"
         onChange={onPropertyChange}
       />

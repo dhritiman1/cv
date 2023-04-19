@@ -9,7 +9,7 @@ const Projects = ({ projects }: Props) => {
   return (
     <CVSection heading="Projects">
       {projects.map((project) => {
-        return <NthProject project={project} />;
+        return <NthProject key={project.id} project={project} />;
       })}
     </CVSection>
   );

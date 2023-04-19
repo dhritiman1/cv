@@ -10,7 +10,7 @@ const TechStack = ({ stack, onTechStackChange }: Props) => {
   return (
     <Section heading="Technologies you know">
       <Input
-        labelText="Tech Stack"
+        labelText="Tech_Stack"
         name="techStack"
         value={stack}
         onChange={onTechStackChange}

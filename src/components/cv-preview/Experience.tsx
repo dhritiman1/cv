@@ -9,7 +9,7 @@ const Experience = ({ experiences }: Props) => {
   return (
     <CVSection heading="Experience">
       {experiences.map((experience) => {
-        return <NthExperiecnce experience={experience} />;
+        return <NthExperiecnce key={experience.id} experience={experience} />;
       })}
     </CVSection>
   );

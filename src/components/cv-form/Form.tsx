@@ -19,7 +19,7 @@ const Form = ({
   onTechStackChange,
 }: Props) => {
   return (
-    <div className="w-[38rem] border p-2 ">
+    <div className="w-[38rem] border flex flex-col items-center pt-3 pb-1 mt-4">
       <Personal data={cv.personal} onPropertyChange={onPropertyChange} />
       <Experience
         experiences={cv.experiences}
