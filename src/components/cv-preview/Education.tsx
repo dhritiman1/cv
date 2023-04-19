@@ -1,19 +1,24 @@
+import { Education as E } from "../../util/type";
 import CVSection from "../ui/CVSection";
 
-const Education = () => {
+type Props = {
+  education: E;
+};
+
+const Education = ({ education }: Props) => {
   return (
     <CVSection heading="Education">
       <div>
         <div>
-          <p>from</p>
-          <p>to</p>
+          <p>{education.from}</p>
+          <p>{education.to}</p>
         </div>
         <div>
           <div>
-            <p>degree</p>
-            <p>GPA</p>
+            <p>{education.degree}</p>
+            <p>{education.gpa}</p>
           </div>
-          <p>university</p>
+          <p>{education.university}</p>
         </div>
       </div>
     </CVSection>

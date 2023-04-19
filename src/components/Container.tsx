@@ -47,14 +47,14 @@ const Container = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex flex-col lg:flex-row items-center">
       <Form
         cv={cv}
         onPropertyChange={handlePropertyChange}
         onArrayPropertyChange={handleArrayPropertyChange}
         onTechStackChange={handleTechStackChange}
       />
-      <Preview />
+      <Preview cv={cv} />
     </div>
   );
 };

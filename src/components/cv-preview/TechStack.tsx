@@ -1,11 +1,15 @@
 import CVSection from "../ui/CVSection";
 
-const TechStack = () => {
+type Props = {
+  stack: string;
+};
+
+const TechStack = ({ stack }: Props) => {
   return (
     <CVSection heading="Technology">
       <div>
         <p>Tech Stack</p>
-        <p>languages...</p>
+        <p>{stack}</p>
       </div>
     </CVSection>
   );

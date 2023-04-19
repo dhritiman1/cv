@@ -1,10 +1,15 @@
+import { Personal as P } from "../../util/type";
 import CVSection from "../ui/CVSection";
 
-const Personal = () => {
+type Props = {
+  data: P;
+};
+
+const Personal = ({ data }: Props) => {
   return (
     <CVSection heading="">
-      <div>name</div>
-      <div>@email.com</div>
+      <div>{data.name}</div>
+      <div>{data.email}</div>
     </CVSection>
   );
 };
