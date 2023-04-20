@@ -80,17 +80,27 @@ const Container = () => {
   };
 
   return (
-    <div className="flex flex-col items-center w-full lg:flex-row ">
-      <Form
-        cv={cv}
-        onPropertyChange={handlePropertyChange}
-        onArrayPropertyChange={handleArrayPropertyChange}
-        onTechStackChange={handleTechStackChange}
-        onAddExperience={handleAddExperience}
-        onAddProject={handleAddProject}
-      />
-      <p className="text-2xl font-extralight w-full px-8 mt-8">Preview:</p>
-      <Preview cv={cv} />
+    <div className="flex flex-col items-center w-full lg:flex-row lg:justify-evenly">
+      <div>
+        <p className="text-2xl font-extralight w-full px-8 mt-8 lg:px-0">
+          Fill up the form:
+        </p>
+        <Form
+          cv={cv}
+          onPropertyChange={handlePropertyChange}
+          onArrayPropertyChange={handleArrayPropertyChange}
+          onTechStackChange={handleTechStackChange}
+          onAddExperience={handleAddExperience}
+          onAddProject={handleAddProject}
+        />
+      </div>
+
+      <div>
+        <p className="text-2xl font-extralight w-full px-8 mt-8 lg:px-0">
+          Preview:
+        </p>
+        <Preview cv={cv} />
+      </div>
     </div>
   );
 };
