@@ -80,9 +80,9 @@ const Container = () => {
   };
 
   return (
-    <div className="flex flex-col items-center w-full lg:flex-row lg:justify-evenly">
-      <div>
-        <p className="text-2xl font-extralight w-full px-8 mt-8 lg:px-0">
+    <div className="flex flex-col lg:flex-row md:items-center">
+      <div className="lg:w-[50vw] lg:flex lg:items-center lg:flex-col">
+        <p className="text-2xl font-extralight w-full lg:w-[44rem] mt-4 pl-4 md:p-0">
           Fill up the form:
         </p>
         <Form
@@ -95,10 +95,8 @@ const Container = () => {
         />
       </div>
 
-      <div>
-        <p className="text-2xl font-extralight w-full px-8 mt-8 lg:px-0">
-          Preview:
-        </p>
+      <div className="lg:w-[50vw] w-full flex items-center flex-col scale-75 lg:scale-100">
+        <p className="text-2xl font-extralight w-[44rem]  mt-4">Preview:</p>
         <Preview cv={cv} />
       </div>
     </div>

@@ -23,7 +23,7 @@ const Form = ({
   onAddProject,
 }: Props) => {
   return (
-    <div className="md:w-[38rem] w-full border flex flex-col items-center pt-3 pb-1 mt-4">
+    <div className="lg:w-[44rem] md:w-[42rem] w-full border flex flex-col items-center py-3 h-[872px] my-3 mt-2 overflow-x-scroll">
       <Personal data={cv.personal} onPropertyChange={onPropertyChange} />
       <Experience
         experiences={cv.experiences}

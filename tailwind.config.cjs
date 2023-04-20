@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       width: {
         mobile: "calc(100% - 30px)",
-        "mob-section": "calc(100% - 30px)",
+        "mob-section": "calc(100% - 50px)",
+        "half-input": "calc(100% - 30px)",
       },
     },
   },

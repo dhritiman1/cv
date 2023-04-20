@@ -22,7 +22,7 @@ type NthProps = {
 
 const NthExperiecnce = ({ experience }: NthProps) => {
   return (
-    <div className="flex font-light text-sm leading-tight">
+    <div className="flex font-light text-sm leading-tight w-full">
       <div className="flex w-[80px] pr-3">
         <p>{experience.from}</p>
         <p className="px-[1px]">-</p>
