@@ -1,5 +1,6 @@
 import { Projects as P } from "../../util/type";
 import CVSection from "../ui/CVSection";
+import Li from "../ui/Li";
 
 type Props = {
   projects: P[];
@@ -21,11 +22,20 @@ type NthProps = {
 
 const NthProject = ({ project }: NthProps) => {
   return (
-    <div>
-      <div>{project.link}</div>
+    <div className="flex font-light text-sm leading-tight w-full">
+      <div className="flex w-[80px] pr-3">
+        <a href={project.link}>Github</a>
+      </div>
       <div>
         <p>{project.title}</p>
-        <p>{project.desc}</p>
+        <p>
+          {project.desc
+            .split("*")
+            .slice(1)
+            .map((item) => (
+              <Li key={item.slice(0, 10)} item={item} />
+            ))}
+        </p>
       </div>
     </div>
   );

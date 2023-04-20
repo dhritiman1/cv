@@ -12,17 +12,17 @@ const Education = ({ education, onPropertyChange }: Props) => {
     <Section heading="Education">
       <div className="flex justify-between">
         <Input
-          labelText="To"
-          name="to"
-          value={education.to}
+          labelText="From"
+          name="from"
+          value={education.from}
           width="w-[14rem]"
           property="education"
           onChange={onPropertyChange}
         />
         <Input
-          labelText="From"
-          name="from"
-          value={education.from}
+          labelText="To"
+          name="to"
+          value={education.to}
           width="w-[14rem]"
           property="education"
           onChange={onPropertyChange}

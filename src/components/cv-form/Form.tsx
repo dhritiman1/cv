@@ -10,6 +10,8 @@ type Props = {
   onPropertyChange(e: any, property: Property): void;
   onArrayPropertyChange(e: any, id: string, property: ArrProperty): void;
   onTechStackChange(e: any): void;
+  onAddExperience(): void;
+  onAddProject(): void;
 };
 
 const Form = ({
@@ -17,17 +19,21 @@ const Form = ({
   onPropertyChange,
   onArrayPropertyChange,
   onTechStackChange,
+  onAddExperience,
+  onAddProject,
 }: Props) => {
   return (
-    <div className="w-[38rem] border flex flex-col items-center pt-3 pb-1 mt-4">
+    <div className="md:w-[38rem] w-full border flex flex-col items-center pt-3 pb-1 mt-4">
       <Personal data={cv.personal} onPropertyChange={onPropertyChange} />
       <Experience
         experiences={cv.experiences}
         onArrayPropertyChange={onArrayPropertyChange}
+        onAddExperience={onAddExperience}
       />
       <Projects
         projects={cv.projects}
         onArrayPropertyChange={onArrayPropertyChange}
+        onAddProject={onAddProject}
       />
       <Education education={cv.education} onPropertyChange={onPropertyChange} />
       <TechStack stack={cv.techStack} onTechStackChange={onTechStackChange} />

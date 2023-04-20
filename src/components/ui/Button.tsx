@@ -6,7 +6,10 @@ type Prop = {
 const Button = ({ text, handleClick }: Prop) => {
   return (
     <>
-      <button className="" onClick={handleClick}>
+      <button
+        className="font-light border bg-[#f0f3f9] active:bg-[#f7faff] active:text-[#4e4e4e] mx-2 my-1 text-[14px]"
+        onClick={handleClick}
+      >
         {text}
       </button>
     </>

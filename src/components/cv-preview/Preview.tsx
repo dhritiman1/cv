@@ -11,7 +11,7 @@ type Props = {
 
 const Preview = ({ cv }: Props) => {
   return (
-    <div>
+    <div className="w-[44rem] border flex flex-col items-center py-3 h-[872px] my-3 mt-2">
       <Personal data={cv.personal} />
       <Experience experiences={cv.experiences} />
       <Projects projects={cv.projects} />

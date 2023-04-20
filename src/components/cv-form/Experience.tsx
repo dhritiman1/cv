@@ -1,4 +1,5 @@
 import { ArrProperty, Experience as E } from "../../util/type";
+import Button from "../ui/Button";
 import Input from "../ui/Input";
 import Section from "../ui/Section";
 import TextArea from "../ui/TextArea";
@@ -6,9 +7,14 @@ import TextArea from "../ui/TextArea";
 type Props = {
   experiences: E[];
   onArrayPropertyChange(e: any, property: ArrProperty, id: string): void;
+  onAddExperience(): void;
 };
 
-const Experience = ({ experiences, onArrayPropertyChange }: Props) => {
+const Experience = ({
+  experiences,
+  onArrayPropertyChange,
+  onAddExperience,
+}: Props) => {
   return (
     <Section heading="Experience">
       {experiences.map((experience) => {
@@ -21,6 +27,7 @@ const Experience = ({ experiences, onArrayPropertyChange }: Props) => {
           />
         );
       })}
+      <Button text={"Add Experience"} handleClick={onAddExperience} />
     </Section>
   );
 };
@@ -36,18 +43,18 @@ const NthExperience = ({ experience, id, onChange }: NthProps) => {
     <div className="flex flex-col">
       <div className="flex justify-between">
         <Input
-          labelText="To"
-          name="to"
-          value={experience.to}
+          labelText="From"
+          name="from"
+          value={experience.from}
           width="w-[14rem]"
           property="experiences"
           onChange={onChange}
           id={id}
         />
         <Input
-          labelText="From"
-          name="from"
-          value={experience.from}
+          labelText="To"
+          name="to"
+          value={experience.to}
           width="w-[14rem]"
           property="experiences"
           onChange={onChange}

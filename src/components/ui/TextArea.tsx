@@ -27,7 +27,7 @@ const TextArea = ({
         {labelText}
       </label>
       <textarea
-        className="border-b w-full focus:outline-none focus:border-opacity-70 px-2 resize-none font-extralight"
+        className="border-b w-full focus:outline-none focus:border-opacity-70 px-2 py-1 font-light h-12 text-sm leading-tight resize-none text-[#515151]"
         name={name}
         value={value}
         onChange={(e) => onChange(e, property, id)}

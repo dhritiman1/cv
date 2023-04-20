@@ -8,17 +8,21 @@ type Props = {
 const Education = ({ education }: Props) => {
   return (
     <CVSection heading="Education">
-      <div>
-        <div>
+      <div className="flex font-light text-sm leading-tight w-full">
+        <div className="flex w-[80px] pr-3">
           <p>{education.from}</p>
+          <p className="px-[1px]">-</p>
           <p>{education.to}</p>
         </div>
-        <div>
-          <div>
+        <div className="w-full">
+          <div className="flex justify-between">
             <p>{education.degree}</p>
-            <p>{education.gpa}</p>
+            <div className="flex">
+              <p>GPA:</p>
+              <p className="px-2 font-extralight italic">{education.gpa}</p>
+            </div>
           </div>
-          <p>{education.university}</p>
+          <p className="font-extralight italic">{education.university}</p>
         </div>
       </div>
     </CVSection>

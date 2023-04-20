@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        mobile: "calc(100% - 30px)",
+        "mob-section": "calc(100% - 30px)",
+      },
+    },
   },
   plugins: [],
 };

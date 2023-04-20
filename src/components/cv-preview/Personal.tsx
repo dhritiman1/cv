@@ -8,8 +8,10 @@ type Props = {
 const Personal = ({ data }: Props) => {
   return (
     <CVSection heading="">
-      <div>{data.name}</div>
-      <div>{data.email}</div>
+      <div className="w-full font-light leading-none mt-2 text-xl">
+        {data.name}
+      </div>
+      <div className="w-full font-extralight text-sm">{data.email}</div>
     </CVSection>
   );
 };

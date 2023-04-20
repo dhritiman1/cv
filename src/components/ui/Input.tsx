@@ -20,12 +20,12 @@ const Input = ({
   onChange,
 }: Props) => {
   return (
-    <div className={`flex my-[6px] ${width}`}>
-      <label className="pr-4 font-light text-sm" htmlFor={labelText}>
+    <div className={`flex my-[4px] ${width}`}>
+      <label className="pr-4 font-light text-[15px]" htmlFor={labelText}>
         {labelText}
       </label>
       <input
-        className="border-b w-full focus:outline-none focus:border-opacity-70 px-2 font-extralight h-[18px] text-sm leading-none"
+        className="border-b w-full focus:outline-none focus:border-opacity-70 px-2 font-light h-[22px] text-sm leading-none text-[#515151]"
         type="text"
         name={name}
         value={value}
