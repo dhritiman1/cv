@@ -3,7 +3,13 @@ import Form from "./cv-form/Form";
 import initCV from "../util/initCV";
 import Preview from "./cv-preview/Preview";
 import { v4 as uuidv4 } from "uuid";
-import { ArrProperty, CVData, Property } from "../util/type";
+import {
+  ArrProperty,
+  CVData,
+  Experience,
+  Projects,
+  Property,
+} from "../util/type";
 
 const Container = () => {
   const [cv, setCv] = useState<CVData>(initCV);
@@ -24,6 +30,15 @@ const Container = () => {
         },
       ],
     }));
+  };
+
+  const handleDelete = (id: string, property: ArrProperty) => {
+    setCv((prevState) => {
+      const items: any = prevState[property].filter(
+        (item: Experience | Projects) => item.id !== id
+      );
+      return { ...prevState, [property]: [...items] };
+    });
   };
 
   const handleAddProject = () => {
@@ -92,6 +107,7 @@ const Container = () => {
           onTechStackChange={handleTechStackChange}
           onAddExperience={handleAddExperience}
           onAddProject={handleAddProject}
+          onDelete={handleDelete}
         />
       </div>
 

@@ -12,6 +12,7 @@ type Props = {
   onTechStackChange(e: any): void;
   onAddExperience(): void;
   onAddProject(): void;
+  onDelete(id: string, property: ArrProperty): void;
 };
 
 const Form = ({
@@ -21,6 +22,7 @@ const Form = ({
   onTechStackChange,
   onAddExperience,
   onAddProject,
+  onDelete,
 }: Props) => {
   return (
     <div className="lg:w-[44rem] md:w-[42rem] w-full border flex flex-col items-center py-3 h-[872px] my-3 mt-2 overflow-x-scroll">
@@ -29,11 +31,13 @@ const Form = ({
         experiences={cv.experiences}
         onArrayPropertyChange={onArrayPropertyChange}
         onAddExperience={onAddExperience}
+        onDelete={onDelete}
       />
       <Projects
         projects={cv.projects}
         onArrayPropertyChange={onArrayPropertyChange}
         onAddProject={onAddProject}
+        onDelete={onDelete}
       />
       <Education education={cv.education} onPropertyChange={onPropertyChange} />
       <TechStack stack={cv.techStack} onTechStackChange={onTechStackChange} />

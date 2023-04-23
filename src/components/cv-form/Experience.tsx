@@ -8,12 +8,14 @@ type Props = {
   experiences: E[];
   onArrayPropertyChange(e: any, property: ArrProperty, id: string): void;
   onAddExperience(): void;
+  onDelete(id: string, property: ArrProperty): void;
 };
 
 const Experience = ({
   experiences,
   onArrayPropertyChange,
   onAddExperience,
+  onDelete,
 }: Props) => {
   return (
     <Section heading="Experience">
@@ -24,6 +26,7 @@ const Experience = ({
             experience={experience}
             id={experience.id}
             onChange={onArrayPropertyChange}
+            onDelete={onDelete}
           />
         );
       })}
@@ -36,9 +39,10 @@ type NthProps = {
   experience: E;
   id: string;
   onChange(e: any, property: ArrProperty, id: string): void;
+  onDelete(id: string, property: ArrProperty): void;
 };
 
-const NthExperience = ({ experience, id, onChange }: NthProps) => {
+const NthExperience = ({ experience, id, onChange, onDelete }: NthProps) => {
   return (
     <div className="flex flex-col">
       <div className="flex justify-between">
@@ -93,6 +97,10 @@ const NthExperience = ({ experience, id, onChange }: NthProps) => {
         property="experiences"
         onChange={onChange}
         id={experience.id}
+      />
+      <Button
+        text={"Delete Experience"}
+        handleClick={() => onDelete(experience.id, "experiences")}
       />
     </div>
   );

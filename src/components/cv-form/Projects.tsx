@@ -8,9 +8,15 @@ type Props = {
   projects: P[];
   onArrayPropertyChange(e: any, id: string, property: ArrProperty): void;
   onAddProject(): void;
+  onDelete(id: string, property: ArrProperty): void;
 };
 
-const Projects = ({ projects, onArrayPropertyChange, onAddProject }: Props) => {
+const Projects = ({
+  projects,
+  onArrayPropertyChange,
+  onAddProject,
+  onDelete,
+}: Props) => {
   return (
     <Section heading="Projects">
       {projects.map((project) => {
@@ -20,6 +26,7 @@ const Projects = ({ projects, onArrayPropertyChange, onAddProject }: Props) => {
             project={project}
             onChange={onArrayPropertyChange}
             id={project.id}
+            onDelete={onDelete}
           />
         );
       })}
@@ -32,9 +39,10 @@ type NthProp = {
   project: P;
   id: string;
   onChange(e: any, property: ArrProperty, id: string): void;
+  onDelete(id: string, property: ArrProperty): void;
 };
 
-const NthProject = ({ project, id, onChange }: NthProp) => {
+const NthProject = ({ project, id, onChange, onDelete }: NthProp) => {
   return (
     <div className="flex flex-col">
       <Input
@@ -60,6 +68,10 @@ const NthProject = ({ project, id, onChange }: NthProp) => {
         property="projects"
         id={id}
         onChange={onChange}
+      />
+      <Button
+        text={"Delete Project"}
+        handleClick={() => onDelete(project.id, "projects")}
       />
     </div>
   );
