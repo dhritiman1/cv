@@ -34,9 +34,9 @@ const Container = () => {
 
   const handleDelete = (id: string, property: ArrProperty) => {
     setCv((prevState) => {
-      const items: any = prevState[property].filter(
-        (item: Experience | Projects) => item.id !== id
-      );
+      const items: Experience[] | Projects[] = (
+        prevState[property] as typeof cv.experiences
+      ).filter((item: Experience | Projects) => item.id !== id);
       return { ...prevState, [property]: [...items] };
     });
   };

@@ -16,7 +16,8 @@ const Preview = ({ cv }: Props) => {
       {cv.experiences.length !== 0 && (
         <Experience experiences={cv.experiences} />
       )}
-      <Projects projects={cv.projects} />
+      {cv.projects.length !== 0 && <Projects projects={cv.projects} />}
+
       <Education education={cv.education} />
       <TechStack stack={cv.techStack} />
     </div>
